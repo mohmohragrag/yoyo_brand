@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoyo - Handmade Bags</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.jpeg" alt="Yoyo Logo" class="logo">
+      <h1 id="site-name">Yoyo Brand</h1>
+    </div>
+    <nav>
+      <a href="#home" id="home-link">Home</a>
+      <a href="#products" id="shop-link">Shop</a>
+      <a href="#about" id="about-link">About</a>
+    </nav>
+  </header>
+
+  <button id="language-toggle" onclick="toggleLanguage()">Switch to Arabic</button>
+
+  <section id="home">
+    <h2 id="welcome-msg">Welcome to Yoyo Store</h2>
+    <p id="intro-msg">Discover unique handmade bags crafted with love.</p>
+  </section>
+
+  <section id="products">
+    <h2 id="products-title">Our Products</h2>
+    <div class="product" onclick="showProductDetails('Bag 1', '50', 'images/bag1.jpg,images/bag12.jpg', 'Red, Blue, Green')">
+      <img src="images/bag1.jpg" alt="Handmade Bag 1">
+      <h3>Bag 1</h3>
+      <p id="product-1-price">Price: 50 EGP</p>
+    </div>
+    <div class="product" onclick="showProductDetails('Bag 2', '60', 'images/bag2.jpg,images/bag21.jpg', 'Red, Blue, Green')">
+      <img src="images/bag2.jpg" alt="Handmade Bag 2">
+      <h3>Bag 2</h3>
+      <p id="product-2-price">Price: 60 EGP</p>
+    </div>
+  </section>
+
+  <section id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <button id="checkout" onclick="checkout()">Buy Now</button>
+  </section>
+
+  <section id="about">
+    <h2 id="about-title">About Yoyo</h2>
+    <p id="about-text">At Yoyo, we create high-quality handmade bags that combine style and functionality. We prioritize craftsmanship, sustainability, and unique designs.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Yoyo Bags. All rights reserved.</p>
+  </footer>
+
+  <!-- Product Details Modal -->
+  <div id="product-details-modal">
+    <span id="close-modal" onclick="closeProductDetails()">X</span>
+    <div class="product-image-container">
+      <button class="image-nav-btn" id="prev-img" onclick="changeImage(-1)">&#10094;</button>
+      <img id="product-image" src="" alt="Product Image">
+      <button class="image-nav-btn" id="next-img" onclick="changeImage(1)">&#10095;</button>
+    </div>
+    <h3 id="product-name"></h3>
+    <p id="product-price"></p>
+    <p id="product-colors"></p>
+
+    <label id="product-color-label" for="product-colors-select">Choose a color:</label>
+    <select id="product-colors-select"></select>
+
+    <button id="modal-add-to-cart">Add to Cart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
